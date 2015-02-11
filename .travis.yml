@@ -1,3 +1,8 @@
- language: node_js
- node_js:
+script: bash ./deploy
+language: node_js
+node_js:
    - "0.10"
+env:
+   global:
+      - GH_REPO: github.com/donotknow/miniature-octo-tribble.git
+      - secure: "HfGnZdksyL/APzwJxomHzQhiO5AnamCbLNVxf4g9JxIb2TtXkxaRJ+LnY4sWYK+Q9iGlBQ8JtA24KYnCK1oCQOZtYWZfozU9/HMGL84rxSM8sJ6VuqIDsnWseyN9w6s25tSCY1uMTOI6LW+jSVLJkstzFRwIYg8pDwxe0AxNXeQ="
