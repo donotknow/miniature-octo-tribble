@@ -65,7 +65,7 @@ gulp.task('scripts', ['clean:scripts'], function() {
 			var b = browserify(filename, {});
 			return b.bundle();
 		});
-	}
+	};
 
 	return gulp.src(paths.scripts.src)
 		.pipe(bundler())

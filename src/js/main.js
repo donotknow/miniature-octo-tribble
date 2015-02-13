@@ -5,7 +5,7 @@ var Main = (function() {
 		initialize: function() {
 			return this;
 		}
-	}
+	};
 }());
 
 module.exports = Main.initialize();
