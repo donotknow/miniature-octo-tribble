@@ -2,12 +2,13 @@
 
 var gulp = require('gulp');
 
-var browserify = require('browserify');
-var del        = require('del');
-var prefix     = require('gulp-autoprefixer');
-var rename     = require('gulp-rename');
-var sass       = require('gulp-sass');
-var transform  = require('vinyl-transform');
+var browserify  = require('browserify');
+var del         = require('del');
+var prefix      = require('gulp-autoprefixer');
+var rename      = require('gulp-rename');
+var sass        = require('gulp-sass');
+var transform   = require('vinyl-transform');
+var browserSync = require('browser-sync');
 
 var basePaths = {
 	src: './src',
@@ -77,9 +78,17 @@ gulp.task('pages', ['clean:pages'], function() {
 		.pipe(gulp.dest(paths.pages.dest));
 });
 
+gulp.task('browser-sync', function() {
+	browserSync({
+		server: {
+			baseDir: './build'
+		}
+	});
+});
+
 gulp.task('build', ['styles', 'scripts', 'pages']);
-gulp.task('default', ['build'], function() {
+gulp.task('default', ['build', 'browser-sync'], function() {
 	Object.keys(paths).forEach(function(type) {
-		gulp.watch(paths[type].watch, [type]);
+		gulp.watch(paths[type].watch, [type, browserSync.reload]);
 	});
 });
