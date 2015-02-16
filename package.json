@@ -27,6 +27,7 @@
     "vinyl-transform": "^1.0.0"
   },
   "dependencies": {
+    "event-emitter": "^0.3.3",
     "normalize.css": "^3.0.2"
   }
 }
