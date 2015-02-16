@@ -1,43 +1,43 @@
 'use strict';
 
-var Main = (function() {
+
+var PHOTO_SET_ID = '72157639383517453';
+
+
+var requestFlickrPhotoset = require( './flickr/requestPhotoset' );
+var imagesDataToImgsFrag = require( './flickr/imagesDataToImgsFrag' );
+var galleryBuilder = require( './gallery/builder' );
+
+
+var Main = ( function() {
 	return {
 
 		initialize: function() {
-			return this;
-		},
 
-		photoSrc: function(photo) {
-			return 'https://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg';
-		},
+			return requestFlickrPhotoset( PHOTO_SET_ID ).then( function( images ) {
 
-		photo: function(photo) {
-			console.log(photo.urls.url[0]._content);
-		},
+				var wrapper = document.createElement( 'div' );
+				wrapper.className = 'photobox';
 
-		handleApiResponse: function(data) {
-			if (data.photoset && data.photoset.photo) {
-				var photos = data.photoset.photo;
-				var frag = document.createDocumentFragment();
-				photos.forEach(function(photo) {
-					var img = new Image();
-					img.src = Main.photoSrc(photo);
-					frag.appendChild(img);
-				});
+				var div = document.createElement( 'div' );
+				div.className = 'photos';
+				wrapper.appendChild( div );
 
-				var div = document.createElement('div');
-				div.className = 'photobox';
-				div.appendChild(frag);
+				var frag = imagesDataToImgsFrag( images );
+				div.appendChild( frag );
 
-				document.body.appendChild(div);
-			}
+				document.body.appendChild( wrapper );
+
+				return galleryBuilder( wrapper, 'img' );
+
+			}, function( error ) {
+				throw error;
+			} );
+
 		}
 
 	};
-}());
-
-
-window.jsonFlickrApi = Main.handleApiResponse;
+}() );
 
 
 module.exports = Main.initialize();

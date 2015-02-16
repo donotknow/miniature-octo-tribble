@@ -1,0 +1,123 @@
+// 
+// .gallery is className that gets added to the photobox
+// whenever it's initialized as a gallery
+// 
+// animation and naviation elements goes here
+// 
+
+.gallery {
+	img {
+		opacity: 0;
+		pointer-events: none;
+		transition: .5s .5s opacity ease-in;
+	}
+
+	img.current {
+		opacity: 1;
+		pointer-events: auto;
+
+		// this 0s value mimics a “fade-in” effect
+		transition-delay: 0s;
+	}
+
+	[data-gallery-method] {
+		cursor: pointer;
+		pointer-events: auto;
+
+		&.disabled {
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+
+	.arrow-nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 1.6875em;
+		pointer-events: none;
+
+		.arrow-nav-link {
+			position: absolute;
+			background: $swatch-scrim;
+			font-size: 160px;
+			top: 0;
+			bottom: 0;
+			width: 40px;
+			text-decoration: none;
+			color: $swatch-nav;
+			font-weight: 100;
+			transform: scale( 1.2, 1 );
+			pointer-events: auto;
+
+			.arrow-nav-link-text {
+				position: absolute;
+				top: 50%;
+				line-height: 0;
+			}
+
+			&[data-gallery-method='showPrevious'],
+			&[data-gallery-method='showPrevious'] .arrow-nav-link-text {
+				left: 0;
+			}
+
+			&[data-gallery-method='showNext'],
+			&[data-gallery-method='showNext'] .arrow-nav-link-text {
+				right: 0;
+			}
+
+			&:hover {
+				color: darken( $swatch-nav, 10% );
+			}
+
+			&.disabled {
+				.arrow-nav-link-text {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.dot-nav {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: $swatch-scrim;
+		pointer-events: none;
+
+		.dot-nav-link {
+			display: inline-block;
+			width: .375em;
+			height: .375em;
+			margin: .5em .2em;
+			border-radius: 50%;
+			text-decoration: none;
+			border: 1px solid transparent;
+			background: $swatch-nav;
+			pointer-events: all;
+
+			.dot-nav-link-text {
+				@include text-replace;
+			}
+
+			&:hover {
+				background: darken( $swatch-nav, 10% );
+			}
+
+			&.current {
+				cursor: default;
+				pointer-events: none;
+				border-color: darken( $swatch-nav, 20% );
+				box-shadow:
+					1px 0 0 0 darken( $swatch-nav, 20% ),
+					0 1px 0 0 darken( $swatch-nav, 20% ),
+					0 0 1px 0 darken( $swatch-nav, 20% ),
+					0 0 0 1px darken( $swatch-nav, 20% )
+				;
+				background: none;
+			}
+		}
+	}
+}
