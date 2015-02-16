@@ -1,8 +1,9 @@
 {
-  "sub": true,
+  "browser": true,
+  "devel": true,
   "globalstrict": true,
+  "sub": true,
   "globals": {
-    "console": false,
     "module": false,
     "require": false
   }
