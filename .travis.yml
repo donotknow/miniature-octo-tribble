@@ -1,4 +1,4 @@
-script: bash ./deploy
+script: bash ./travis
 language: node_js
 node_js:
    - "0.10"
@@ -6,6 +6,3 @@ env:
    global:
       - GH_REPO: github.com/donotknow/miniature-octo-tribble.git
       - secure: "ThQLoWX6OxWahVVCUezGY3OFCfmKQeUoQp4LUskS03P3BMOXGpSrawJvBfA2T/lAyC7uVgqGoNjGkdjsd6C1BXpef5Z25O+f2mtB7PHwvnFGnHQLzhYQboKU/PAGkllYYo842QqVs7buL2DOS1r8RVi3x5fzpoXYm2byykvcbhc="
-branches:
-  only:
-    - master
