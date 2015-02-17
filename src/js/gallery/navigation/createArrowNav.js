@@ -34,5 +34,4 @@ module.exports = function createArrowNav( wrapper ) {
 	nav.appendChild( frag );
 
 	return wrapper.appendChild( nav );
-	return wrapper.insertBefore( nav, wrapper.firstChild );
 };

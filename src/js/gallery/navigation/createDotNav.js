@@ -31,5 +31,4 @@ module.exports = function createDotNav( wrapper, images ) {
 	nav.appendChild( frag );
 
 	return wrapper.appendChild( nav );
-	return wrapper.insertBefore( nav, wrapper.firstChild );
 };
