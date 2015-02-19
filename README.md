@@ -38,8 +38,6 @@ a [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) module, so
 watching. [BrowserSync](http://www.browsersync.io) is in the mix to reload the browser whenever
 a watched build is complete.
 
-
-
 Feel free to test it out! Clone this repo, `npm install`, and (if you don’t have gulp installed
 via NPM globally) `./node_modules/gulp/bin/gulp.js`.
 
