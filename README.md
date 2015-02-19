@@ -12,12 +12,11 @@ There is keyboard navigation (right and left arrow keys). The arrows and
 keyboard will change the current image to the next and previous images,
 respectively.
 
-There are no external JavaScript libraries, like JQuery or Angular. I did,
-however, include the standard node
-[event-emitter](http://nodejs.org/api/events.html) module, save time in this
-exercise. Furthermore, there are no CSS frameworks, like Foundation or
-Bootstrap. I am including the standard normalize.css to limit differences
-between browser user-agent stylesheets.
+There are no external JavaScript libraries, like JQuery or Angular. I did, however, include the
+standard node [event-emitter](http://nodejs.org/api/events.html) module, save time in this
+exercise. Furthermore, there are no CSS frameworks, like Foundation or Bootstrap. I am
+including [normalize.css](http://necolas.github.io/normalize.css/) to limit differences between
+browser user-agent stylesheets.
 
 This is intended for use in a modern browser with ECMAScript 5 compatibility. It was tested in
 the newest versions of Chrome and Safari on Mac OS X Yosemite, iOS 8 on iPhone 6, and iOS 8 on
