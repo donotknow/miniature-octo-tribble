@@ -38,6 +38,10 @@
 		bottom: 1.6875em;
 		pointer-events: none;
 
+		@include breakpoint($small-breakpoint) {
+			bottom: .625em;
+		}
+
 		.arrow-nav-link {
 			position: absolute;
 			background: $swatch-scrim;
@@ -87,17 +91,15 @@
 		background: $swatch-scrim;
 		pointer-events: none;
 
-		@media only screen and (max-width: 540px) {
-			& {
-				left: -20px;
-				right: -20px;
-				bottom: -20px;
-				padding: 0 .5em ;
-				height: 1.9em;
-				overflow-y: scroll;
-				-webkit-overflow-scrolling: touch;
-				white-space: nowrap;
-			}
+		@include breakpoint($small-breakpoint) {
+			left: -20px;
+			right: -20px;
+			bottom: -20px;
+			padding: 0 .5em;
+			height: 1.9em;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+			white-space: nowrap;
 		}
 
 		.dot-nav-link {
