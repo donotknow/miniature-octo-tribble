@@ -31,7 +31,7 @@ Keeping the build process fast was the most important consideration I had. Since
 for fast build times. [Sass](http://sass-lang.com) is the natural choice for a CSS preprocessor
 since it’s popularity, feature set, and with libsass it’s speed. I didn’t use
 [Compass](http://compass-style.org), because the features didn’t seem necessary and I didn’t
-want to slow down the build with ruby. At this point, I don't want to write anything other than
+want to slow down the build with ruby. At this point, I don’t want to write anything other than
 a [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) module, so
 [browserify](http://browserify.org) is my compiler of choice. I added in
 [watchify](https://github.com/substack/watchify) for adding speed to subsequent builds while
@@ -40,7 +40,7 @@ a watched build is complete.
 
 
 
-Feel free to test it out! Clone this repo, `npm install`, and (if you don't have gulp installed
+Feel free to test it out! Clone this repo, `npm install`, and (if you don’t have gulp installed
 via NPM globally) `./node_modules/gulp/bin/gulp.js`.
 
 This was my first time using [Travis](https://travis-ci.org/donotknow/miniature-octo-tribble)
