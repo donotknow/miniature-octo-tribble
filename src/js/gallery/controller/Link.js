@@ -31,15 +31,15 @@ var LinkController = function LinkController( gallery, selector ) {
 var proto = LinkController.prototype;
 
 
-proto.targetMatchesSelector = function targetMatchesSelector( target ) {
+proto.getTargetAncestorThatMatchesSelector = function getTargetAncestorThatMatchesSelector( target ) {
 	if ( elementMatchesSelector( target, this.selector ) ) {
-		return true;
+		return target;
 	}
 
 	var parentNode = target;
 	while ( parentNode ) {
 		if ( elementMatchesSelector( parentNode, this.selector ) ) {
-			return true;
+			return parentNode;
 		}
 		parentNode = parentNode.parentNode;
 	}
@@ -49,9 +49,10 @@ proto.targetMatchesSelector = function targetMatchesSelector( target ) {
 
 
 proto.handleClick = function ( event ) {
-	var target = event.target;
+	var target = this.getTargetAncestorThatMatchesSelector( event.target );
 
-	if ( this.targetMatchesSelector( target ) ) {
+	if ( target ) {
+
 		event.preventDefault();
 
 		var method = target.getAttribute( 'data-gallery-method' );
