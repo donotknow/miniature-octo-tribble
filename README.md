@@ -20,8 +20,8 @@ Bootstrap. I am including the standard normalize.css to limit differences
 between browser user-agent stylesheets.
 
 This is intended for use in a modern browser with ECMAScript 5 compatibility. It was tested in
-the newest versions of Chrome and Safari on Mac OS X Yosemite, iOS 8 on iPhone 6, and iOS 8 on
-iPad mini.
+the newest versions of Chrome and Safari on Mac OS X Yosemite, iOS 8 on iPhone 6, and iOS 8 on
+iPad mini.
 
 ---
 
