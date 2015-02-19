@@ -8,16 +8,14 @@
 .gallery {
 	img {
 		opacity: 0;
-		pointer-events: none;
 		transition: .5s .5s opacity ease-in;
+		pointer-events: none;
 	}
 
 	img.current {
 		opacity: 1;
+		transition-delay: 0s; // this 0s value mimics a “fade-in” effect
 		pointer-events: auto;
-
-		// this 0s value mimics a “fade-in” effect
-		transition-delay: 0s;
 	}
 
 	[data-gallery-method] {
@@ -33,9 +31,9 @@
 	.arrow-nav {
 		position: absolute;
 		top: 0;
-		left: 0;
 		right: 0;
 		bottom: 1.6875em;
+		left: 0;
 		pointer-events: none;
 
 		@include breakpoint( $small-breakpoint ) {
@@ -44,14 +42,14 @@
 
 		.arrow-nav-link {
 			position: absolute;
-			background: $swatch-scrim;
-			font-size: 160px;
 			top: 0;
 			bottom: 0;
 			width: 40px;
-			text-decoration: none;
+			background: $swatch-scrim;
 			color: $swatch-nav;
+			font-size: 160px;
 			font-weight: 100;
+			text-decoration: none;
 			transform: scale( 1.2, 1 );
 			pointer-events: auto;
 
@@ -85,32 +83,32 @@
 
 	.dot-nav {
 		position: absolute;
-		left: 0;
 		right: 0;
 		bottom: 0;
+		left: 0;
 		background: $swatch-scrim;
 		pointer-events: none;
 
 		@include breakpoint( $small-breakpoint ) {
-			left: -20px;
 			right: -20px;
 			bottom: -20px;
-			padding: 0 .5em;
-			height: 1.9em;
+			left: -20px;
 			overflow-y: scroll;
-			-webkit-overflow-scrolling: touch;
+			height: 1.9em;
+			padding: 0 .5em;
 			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
 		}
 
 		.dot-nav-link {
 			display: inline-block;
+			margin: .5em .2em;
 			width: .375em;
 			height: .375em;
-			margin: .5em .2em;
-			border-radius: 50%;
-			text-decoration: none;
 			border: 1px solid transparent;
+			border-radius: 50%;
 			background: $swatch-nav;
+			text-decoration: none;
 			pointer-events: all;
 
 			.dot-nav-link-text {
@@ -122,15 +120,15 @@
 			}
 
 			&.current {
-				pointer-events: none;
 				border-color: darken( $swatch-nav, 20% );
+				background: none;
 				box-shadow:
 					1px 0 0 0 darken( $swatch-nav, 20% ),
 					0 1px 0 0 darken( $swatch-nav, 20% ),
 					0 0 1px 0 darken( $swatch-nav, 20% ),
 					0 0 0 1px darken( $swatch-nav, 20% )
 				;
-				background: none;
+				pointer-events: none;
 			}
 		}
 	}
