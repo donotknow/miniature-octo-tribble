@@ -15,19 +15,31 @@ respectively.
 There are no external JavaScript libraries, like JQuery or Angular. I did,
 however, include the standard node
 [event-emitter](http://nodejs.org/api/events.html) module, save time in this
-exercise. Furthermore, there are no (S)CSS dependencies, like Compass or
+exercise. Furthermore, there are no CSS frameworks, like Foundation or
 Bootstrap. I am including the standard normalize.css to limit differences
 between browser user-agent stylesheets.
 
-This is intended for use in a modern browser with ECMAScript 5 compatibility. It was tested in Chrome and Safari on Mac OS X Yosemite, iOS 8 
+This is intended for use in a modern browser with ECMAScript 5 compatibility. It was tested in
+the newest versions of Chrome and Safari on Mac OS X Yosemite, iOS 8 on iPhone 6, and iOS 8 on
+iPad mini.
 
 ---
 
 I wanted to explore simple build system with this experiment.
 
-Keeping the build process fast was one of the most important things. Since gulp uses streams and is concurrent by default it seemed like a good fit for fast build times. Sass is the natural choice for a CSS preprocessor since it’s popularity, feature set, and with libsass it’s speed. At this point, I don't want to write anything other than a CommonJS module, so browserify is my compiler of choice. I added in watchify for adding speed to subsequent builds while watching. Browsersync is in the mix to reload the browser whenever a watched build is complete.
+Keeping the build process fast was one of the most important things. Since gulp uses streams
+and is concurrent by default it seemed like a good fit for fast build times. Sass is the
+natural choice for a CSS preprocessor since it’s popularity, feature set, and with libsass it’s
+speed. I didn’t use Compass, because the features didn’t seem nessary and I didn’t want to slow
+down the build with ruby. At this point, I don't want to write anything other than a CommonJS
+module, so browserify is my compiler of choice. I added in watchify for adding speed to
+subsequent builds while watching. Browsersync is in the mix to reload the browser whenever a
+watched build is complete.
 
-This was my first time using [Travis](https://travis-ci.org/donotknow/miniature-octo-tribble) for continuous integration, and it was simple to setup and configure `npm test` and to create a small bash script to auto deploy the build to the [gh-pages](https://donotknow.github.io/miniature-octo-tribble/) branch.
+This was my first time using [Travis](https://travis-ci.org/donotknow/miniature-octo-tribble)
+for continuous integration, and it was simple to setup and configure `npm test` and to create a
+small bash script to auto deploy the build to the
+[gh-pages](https://donotknow.github.io/miniature-octo-tribble/) branch.
 
 Auto deployment to gh-pages status:
 
