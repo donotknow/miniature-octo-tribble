@@ -1,8 +1,19 @@
+/// 
+/// “Clip” method text replace
+/// 
 
 @mixin text-replace() {
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);
 }
+
+
+
+/// 
+/// Output a media query, with a provided max-width of size.
+/// 
+/// @param {Number} $size - The max-width size.
+/// 
 
 @mixin breakpoint($size) {
 

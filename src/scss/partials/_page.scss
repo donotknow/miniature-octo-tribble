@@ -1,3 +1,7 @@
+//
+// Page styles are all my styles for the the general layout of the page.
+//
+
 html,
 body {
 	height: 100%;
@@ -19,9 +23,11 @@ body {
 	font-weight: 300;
 }
 
+
+
 //
 // .photobox is the element that houses the gallery
-// before it's initlized as a gallery
+// before it's initialized as a gallery.
 //
 // I'm putting my styles for the general layout on
 // the page on this className.
