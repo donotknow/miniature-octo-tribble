@@ -32,7 +32,7 @@ module.exports = function requestPhotoset( id ) {
 		window.jsonFlickrApi = function( data ) {
 
 			// if flickr api reports an error, reject the promise
-			if ( data.stat !== 'ok') {
+			if ( data.stat !== 'ok' ) {
 				reject( data.stat );
 			}
 
@@ -48,6 +48,6 @@ module.exports = function requestPhotoset( id ) {
 		};
 
 		document.body.appendChild( script );
-	});
+	} );
 
 };

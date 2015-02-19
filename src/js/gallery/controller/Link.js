@@ -57,7 +57,7 @@ proto.handleClick = function ( event ) {
 		var method = target.getAttribute( 'data-gallery-method' );
 		if ( method && typeof this.gallery[method] === 'function' ) {
 			var argument = target.getAttribute( 'data-gallery-argument' );
-			this.gallery[method](argument);
+			this.gallery[method]( argument );
 		} else {
 			this.gallery.showNext();
 		}

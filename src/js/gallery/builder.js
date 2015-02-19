@@ -25,39 +25,39 @@ module.exports = function builder( wrapper, imageSelector ) {
 
 	var observers = {
 
-		previousLink: new LinkPainterObserver(gallery, {
+		previousLink: new LinkPainterObserver( gallery, {
 			className: 'disabled',
 			linksToPaint: function () {
-				return wrapper.querySelectorAll('*[data-gallery-method="showPrevious"]');
+				return wrapper.querySelectorAll( '*[data-gallery-method="showPrevious"]' );
 			},
 			linksToUnPaint: function () {
-				return wrapper.querySelectorAll('*.disabled[data-gallery-method="showPrevious"]');
+				return wrapper.querySelectorAll( '*.disabled[data-gallery-method="showPrevious"]' );
 			},
 			shouldPaint: function() {
 				return ( gallery.getPrevious() === false );
 			}
 		} ),
 
-		nextLink: new LinkPainterObserver(gallery, {
+		nextLink: new LinkPainterObserver( gallery, {
 			className: 'disabled',
 			linksToPaint: function () {
-				return wrapper.querySelectorAll('*[data-gallery-method="showNext"]');
+				return wrapper.querySelectorAll( '*[data-gallery-method="showNext"]' );
 			},
 			linksToUnPaint: function () {
-				return wrapper.querySelectorAll('*.disabled[data-gallery-method="showNext"]');
+				return wrapper.querySelectorAll( '*.disabled[data-gallery-method="showNext"]' );
 			},
 			shouldPaint: function() {
 				return ( gallery.getNext() === false );
 			}
 		} ),
 
-		imageLink: new LinkPainterObserver(gallery, {
+		imageLink: new LinkPainterObserver( gallery, {
 			className: 'current',
 			linksToPaint: function () {
-				return wrapper.querySelectorAll('a[data-gallery-method="show"][data-gallery-argument="' + gallery.getCurrentImageIndex() + '"]');
+				return wrapper.querySelectorAll( 'a[data-gallery-method="show"][data-gallery-argument="' + gallery.getCurrentImageIndex() + '"]' );
 			},
 			linksToUnPaint: function () {
-				return wrapper.querySelectorAll('a[data-gallery-method="show"][data-gallery-argument]');
+				return wrapper.querySelectorAll( 'a[data-gallery-method="show"][data-gallery-argument]' );
 			},
 			shouldPaint: function() {
 				return true;
