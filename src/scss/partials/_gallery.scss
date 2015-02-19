@@ -35,6 +35,7 @@
 		bottom: 1.6875em;
 		left: 0;
 		pointer-events: none;
+		user-select: none;
 
 		@include breakpoint( $small-breakpoint ) {
 			bottom: .625em;
@@ -88,6 +89,7 @@
 		left: 0;
 		background: $swatch-scrim;
 		pointer-events: none;
+		user-select: none;
 
 		@include breakpoint( $small-breakpoint ) {
 			right: -20px;
