@@ -87,6 +87,19 @@
 		background: $swatch-scrim;
 		pointer-events: none;
 
+		@media only screen and (max-width: 540px) {
+			& {
+				left: -20px;
+				right: -20px;
+				bottom: -20px;
+				padding: 0 .5em ;
+				height: 1.9em;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+				white-space: nowrap;
+			}
+		}
+
 		.dot-nav-link {
 			display: inline-block;
 			width: .375em;
@@ -107,7 +120,6 @@
 			}
 
 			&.current {
-				cursor: default;
 				pointer-events: none;
 				border-color: darken( $swatch-nav, 20% );
 				box-shadow:
