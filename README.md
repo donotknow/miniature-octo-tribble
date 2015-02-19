@@ -37,8 +37,8 @@ subsequent builds while watching. Browsersync is in the mix to reload the browse
 watched build is complete.
 
 This was my first time using [Travis](https://travis-ci.org/donotknow/miniature-octo-tribble)
-for continuous integration, and it was simple to setup and configure `npm test` and to create a
-small bash script to auto deploy the build to the
+for continuous integration, and it was simple to setup and configure `npm test` to lint the
+JavaScript and to create a small bash script to auto deploy the build to the
 [gh-pages](https://donotknow.github.io/miniature-octo-tribble/) branch.
 
 Auto deployment to gh-pages status:
