@@ -26,14 +26,19 @@ iPad mini.
 
 I wanted to explore simple build system with this experiment.
 
-Keeping the build process fast was one of the most important things. Since gulp uses streams
-and is concurrent by default it seemed like a good fit for fast build times. Sass is the
-natural choice for a CSS preprocessor since it’s popularity, feature set, and with libsass it’s
-speed. I didn’t use Compass, because the features didn’t seem nessary and I didn’t want to slow
-down the build with ruby. At this point, I don't want to write anything other than a CommonJS
-module, so browserify is my compiler of choice. I added in watchify for adding speed to
-subsequent builds while watching. Browsersync is in the mix to reload the browser whenever a
-watched build is complete.
+Keeping the build process fast was the most important consideration I had. Since
+[gulp](http://gulpjs.com) uses streams and is concurrent by default it seemed like a good fit
+for fast build times. [Sass](http://sass-lang.com) is the natural choice for a CSS preprocessor
+since it’s popularity, feature set, and with libsass it’s speed. I didn’t use
+[Compass](http://compass-style.org), because the features didn’t seem necessary and I didn’t
+want to slow down the build with ruby. At this point, I don't want to write anything other than
+a [CommonJS](http://wiki.commonjs.org/wiki/CommonJS) module, so
+[browserify](http://browserify.org) is my compiler of choice. I added in
+[watchify](https://github.com/substack/watchify) for adding speed to subsequent builds while
+watching. [BrowserSync](http://www.browsersync.io) is in the mix to reload the browser whenever
+a watched build is complete.
+
+
 
 Feel free to test it out! Clone this repo, `npm install`, and (if you don't have gulp installed
 via NPM globally) `./node_modules/gulp/bin/gulp.js`.
