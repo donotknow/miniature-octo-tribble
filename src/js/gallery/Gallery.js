@@ -61,7 +61,7 @@ proto.getCurrentImageIndex = function getCurrentImageIndex( id ) {
 proto.getPreviousIndex = function getPreviousIndex() {
 	var index = this.getCurrentImageIndex() - 1;
 
-	if (index < 0) {
+	if ( index < 0 ) {
 		return false;
 	}
 
@@ -72,7 +72,7 @@ proto.getPreviousIndex = function getPreviousIndex() {
 proto.getNextIndex = function getNextIndex() {
 	var index = this.getCurrentImageIndex() + 1;
 
-	if (index > this.images.length) {
+	if ( index > this.images.length ) {
 		return false;
 	}
 
@@ -93,7 +93,7 @@ proto.getNext = function getNext() {
 proto.show = function show( image ) {
 	if ( this.images[image] ) {
 		this.currentImage = this.images[image];
-	} else if ( Array.prototype.indexOf.call( this.images, image ) > -1) {
+	} else if ( Array.prototype.indexOf.call( this.images, image ) > -1 ) {
 		this.currentImage = image;
 	}
 

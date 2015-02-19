@@ -11,7 +11,7 @@ var createNavItem = function createNavItem( innerText, method, argument ) {
 	var span = document.createElement( 'span' );
 	span.className = 'dot-nav-link-text';
 	span.innerText = innerText;
-	link.appendChild(span);
+	link.appendChild( span );
 
 	return link;
 };

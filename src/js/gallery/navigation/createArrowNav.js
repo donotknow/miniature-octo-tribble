@@ -10,7 +10,7 @@ var createNavItem = function createNavItem( innerText, method ) {
 	var span = document.createElement( 'span' );
 	span.className = 'arrow-nav-link-text';
 	span.innerText = innerText;
-	link.appendChild(span);
+	link.appendChild( span );
 
 	return link;
 };
