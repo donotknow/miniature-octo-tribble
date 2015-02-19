@@ -36,6 +36,9 @@ module, so browserify is my compiler of choice. I added in watchify for adding s
 subsequent builds while watching. Browsersync is in the mix to reload the browser whenever a
 watched build is complete.
 
+Feel free to test it out! Clone this repo, `npm install`, and (if you don't have gulp installed
+via NPM globally) `./node_modules/gulp/bin/gulp.js`.
+
 This was my first time using [Travis](https://travis-ci.org/donotknow/miniature-octo-tribble)
 for continuous integration, and it was simple to setup and configure `npm test` to lint the
 JavaScript and to create a small bash script to auto deploy the build to the
@@ -44,7 +47,6 @@ JavaScript and to create a small bash script to auto deploy the build to the
 Auto deployment to gh-pages status:
 
 [![Build Status](https://travis-ci.org/donotknow/miniature-octo-tribble.svg?branch=master)](https://travis-ci.org/donotknow/miniature-octo-tribble)
-
 
 ---
 
